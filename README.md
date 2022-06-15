@@ -7,9 +7,6 @@ As a result of this, both of these binaries will need to be built for your syste
 
 ## Example
 ```
-> ./ffmpeg-web
-cam-fast-filter.sh "/dev/video2" "hue-fil
-ter.txt" | ./mpv-fast.sh
-> echo Parsed_
-hue_1 h 270 | ./zmqsend
+> ./ffmpeg-webcam-fast-filter.sh "/dev/video2" "hue-filter.txt" | ./mpv-fast.sh
+> echo Parsed_hue_1 h 270 | ./zmqsend
 ```
