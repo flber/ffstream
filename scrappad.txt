@@ -1,0 +1,22 @@
+,
+drawtext=
+	text=
+		'0':
+		fontcolor=white:
+		fontsize=12:
+		box=1:
+		boxcolor=black:
+		boxborderw=5:
+		x=0:
+		y=0
+
+drawtext=
+	text=
+		'0':
+		fontcolor=white:
+		fontsize=60:
+		box=1:
+		boxcolor=black:
+		boxborderw=5:
+		x=(w-text_w)/2:
+		y=(h-text_h)/2
