@@ -1,0 +1,24 @@
+[1:v]
+	scale=
+		w=64:
+		h=-1
+[ov1];
+[2:v]
+	format=yuva444p,
+	colorchannelmixer=
+		aa=1,
+	scale=
+		w=64:
+		h=-1
+[ov2];
+[0:v][ov1]
+	overlay=
+		x=10:
+		y=10
+[ov1];
+[ov1][ov2]
+	overlay=
+		x=11:
+		y=11
+	,
+	zmq
