@@ -6,3 +6,13 @@ For a more experimental set of applications, the `extra/` directory has scripts 
 The goal for the main directory is to provide a couple of tools which should Just Work* though for the moment they're limited to usage on linux.
 
 *which in this case means: will work with, ideally, under half an hour of debugging :)
+
+## Requirements
+
+there are sort of a lot.
+
+First of all, for now this only works on linux. This is due to the fact that scripting for complex audiovisual programs is *much* easier on linux (in my experience), though my longer-term goal is to port this over to a cross platform c codebase (or maybe go or something fancy like that).
+
+For the main program, `ffstream`, you'll need `dunst`, `ffmpeg`, and `xrandr` (all available for most package managers), and `head`, `cut`, and `sed`, which should come pre-installed on most distributions. Additionally, for audio support you'll need alsa and pulseaudio, which are also probably already installed on your system.
+
+Future scripts will be added which extend the base functionality, and these will be documented as they are added.
