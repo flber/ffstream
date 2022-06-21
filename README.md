@@ -5,7 +5,7 @@ For a more experimental set of applications, the `extra/` directory has scripts 
 
 The goal for the main directory is to provide a couple of tools which should Just Work* though for the moment they're limited to usage on linux.
 
-*which in this case means: will work with, ideally, under half an hour of debugging :)
+*which in this case means: will work with ideally under half an hour of debugging :)
 
 ## Requirements and setup
 
