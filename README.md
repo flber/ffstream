@@ -7,12 +7,16 @@ The goal for the main directory is to provide a couple of tools which should Jus
 
 *which in this case means: will work with, ideally, under half an hour of debugging :)
 
-## Requirements
+## Requirements and setup
 
 there are sort of a lot.
 
 First of all, for now this only works on linux. This is due to the fact that scripting for complex audiovisual programs is *much* easier on linux (in my experience), though my longer-term goal is to port this over to a cross platform c codebase (or maybe go or something fancy like that).
 
-For the main program, `ffstream`, you'll need `dunst`, `ffmpeg`, and `xrandr` (all available for most package managers), and `head`, `cut`, and `sed`, which should come pre-installed on most distributions. Additionally, for audio support you'll need alsa and pulseaudio, which are also probably already installed on your system.
+### ffst-main
+
+For the main program, `ffst-main`, you'll need `dunst`, `ffmpeg`, and `xrandr` (all available for most package managers), and `head`, `cut`, and `sed`, which should come pre-installed on most distributions. Additionally, for audio support you'll need alsa and pulseaudio, which are also probably already installed on your system.
+
+`ffst-main` also requires that you have an environment variable called "STREAM_KEY" which contains your stream key. As-is, `ffst-main` only works with twitch, but most streaming services expose a similar url which you can use instead if you'd like by replacing the existing twitch url.
 
 Future scripts will be added which extend the base functionality, and these will be documented as they are added.
