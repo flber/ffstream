@@ -1,0 +1,14 @@
+#!/bin/bash
+
+dunstify "starting stream"
+
+size=$(xrandr | head -n1 | cut -d, -f2 | cut -d" " -f3-5 | sed 's/ //g')
+
+ffmpeg -f x11grab \
+	-video_size $size \
+	-framerate 24 -i $DISPLAY \
+	-f alsa -ac 2 -i pulse -acodec aac \
+	-vf scale=1280x720 \
+	-c:v h264 -g 24 -b:v 2M \
+	-preset ultrafast -vb 3200k \
+	-c:a aac -pix_fmt yuv420p -f flv "rtmp://live-lax.twitch.tv/app/$STREAM_KEY"
