@@ -1,6 +1,18 @@
 #!/bin/bash
 
-dunstify "starting stream"
+out=""
+
+if [ $# -ne 0 ]; then
+	if [[ $1 = "-r" ]]; then
+		dunstify "starting screen capture"
+		out="-y /home/benh/screen-recording.mp4"
+	else
+		echo "unrecognized option: $1"
+	fi
+else
+	dunstify "starting stream"
+	out="-f flv \"rtmp://live-lax.twitch.tv/app/$STREAM_KEY\""
+fi
 
 size=$(xrandr | head -n1 | cut -d, -f2 | cut -d" " -f3-5 | sed 's/ //g')
 
@@ -11,4 +23,5 @@ ffmpeg -f x11grab \
 	-vf scale=1280x720 \
 	-c:v h264 -g 24 -b:v 2M \
 	-preset ultrafast -vb 3200k \
-	-c:a aac -pix_fmt yuv420p -f flv "rtmp://live-lax.twitch.tv/app/$STREAM_KEY"
+	-c:a aac -pix_fmt yuv420p \
+	$out
